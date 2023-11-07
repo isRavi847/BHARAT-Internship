@@ -1,0 +1,92 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    background-color: #111;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 20%;
+    height: fit-content;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+/* Hero section styles */
+.hero {
+    background-image: url('hero\ image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Featured section styles (customize as needed) */
+.featured {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+    /* Add styles for movie/tv show posters */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #111;
+    padding: 10px 0;
+}
