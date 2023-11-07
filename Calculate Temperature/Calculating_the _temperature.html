@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> The Temperature Calculation</title>
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Mulish", sans-serif;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+        display: grid;
+        place-items: center;
+    }
+    form{
+        background-color: yellowgreen;
+        padding: 80px;
+        width: 50%;
+        margin: 100px auto;
+        text-align: center;
+        -webkit-box-shadow: 0 10px 6px -6px pink ;
+        -moz-box-shadow:  0 10px 6px -6px pink ;
+        box-shadow:  0 10px 6px -6px pink ;
+    }
+    #TempCal label{
+        font-size: 30px;
+        color: beige;
+    }
+    #Temp{
+    
+        border: none;
+        padding: 10px;
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    #TempDiff{
+        height: 40px;
+        border: none;
+        font-size: 15px;
+        margin-top: 20px;
+        vertical-align: top;
+    }
+    
+    [type="submit"]{
+        height: 35px;
+        margin: 20px;
+        width: 100px;
+        font-size: 15px;
+        border: none;
+        background-color: green;
+        color: white;
+    }
+    #Result{
+        font-size: 35px;
+        color: green;
+    }</style>
+</head>
+<body>
+<form id="TempCal" onsubmit="calTem(); return false">
+    <label for="Temp">Please Enter the Temperature you'd like to Convert.</label>
+    <br/>
+    <input type="number" name="Temp" id="Temp">
+    <select name="TempDiff" id="TempDiff">
+        <option value="Cel">Celsius</option>
+        <option value="Fah">Fahrenheit</option>
+    </select>
+    <br/> 
+    <input type="submit" name="Temp">
+    <br />
+    <span id="Result"></span>
+</form>
+<script>
+    const calTem = () =>{
+    const numTemp = document.getElementById('Temp').value;
+    const TempSelected = document.getElementById('TempDiff');
+    const Tempvalue = TempDiff.options[TempSelected.selectedIndex].value;
+
+    const CelToFah = (C) => {
+        let Fahrenheit = Math.round((C * 9/5) +32);
+        return Fahrenheit;
+    }
+    const FahToCel = (F) => {
+        let Celsius = Math.round((F - 32) * 5/9);
+        return Celsius;
+    }
+    let Result;
+    if(Tempvalue == 'Cel'){
+        Result = CelToFah(numTemp);
+        document.getElementById('Result').innerHTML = ` = ${Result} &deg Fahrenheit`;
+    }
+    else{
+        Result = FahToCel(numTemp);
+        document.getElementById('Result').innerHTML = ` = ${Result} &deg  Celsius`;
+    }
+}
+</script>    
+</body>
+</html>
